@@ -27,6 +27,6 @@ systemctl enable docker;
 systemctl start docker;
 chmod -R 0777 /www/apps;
 chmod -R 0777 /www/static;
-docker login;
+docker login -ullevkin --password-stdin;
 cd /www;
 docker-compose -f prod.yml up -d;
