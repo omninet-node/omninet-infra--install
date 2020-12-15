@@ -2,7 +2,7 @@
 
 cd /
 apt-get update
-apt-get --yes install git
+apt-get --yes install git rsync
 git clone https://github.com/omninet-node/omninet-infra--composer.git www
 apt-get remove docker docker-engine docker.io containerd runc;
 apt-get update;
@@ -27,6 +27,4 @@ systemctl enable docker;
 systemctl start docker;
 chmod -R 0777 /www/apps;
 chmod -R 0777 /www/static;
-docker login -ullevkin --password-stdin;
 cd /www;
-docker-compose -f prod.yml up -d;
